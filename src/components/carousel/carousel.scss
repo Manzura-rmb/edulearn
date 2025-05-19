@@ -1,0 +1,79 @@
+$color1: #06BBCC;
+$color2: #fff;
+@mixin crsl{
+        width: 100%;
+        height: 100vh;
+        position: relative;
+}
+@mixin crsl-img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+@mixin btn {
+    padding: 16px 48px;
+    border-style: none;
+    cursor: pointer;
+}
+.carousel {
+    height: 100vh;
+    .crsl_1, .crsl_2{
+        @include crsl();
+        background-color:  rgba(24, 29, 56, .7);
+        img{
+            @include crsl-img();
+        }
+        .crsl-txt{
+            width: 70%;
+            height: 100%;
+            padding-top: 200px;
+            padding-left: 200px;
+            padding-right: 200px;
+            h5{
+                font-size: 20px;
+                color: $color1;
+                text-transform: uppercase;
+            }
+            h1{
+                font-size: 55px;
+                color: $color2;
+                text-transform: capitalize;
+            }
+            p{
+                font-size: 20px;
+                color: $color2;
+            }
+            .buttons{
+                display: flex;
+                column-gap: 30px;
+                margin-top: 30px;
+                .bluebtn, .whitebtn{
+                    @include btn();
+                }
+                .bluebtn {
+                    background-color: $color1;
+                    a{
+                        color: $color2;
+                        font-size: 15px;
+                    }
+                }
+                .bluebtn:hover{
+                    background-color: #08a0ae;
+                    transition: 0.2s linear;
+                }
+                .whitebtn{
+                    background-color: $color2;
+                    a{
+                        color: $color1;
+                        font-size: 15px;
+                    }
+                }
+                .whitebtn:hover {
+                    background-color: #dedddd;
+                    transition: 0.2s linear;
+                }
+            }
+        }
+    }
+}
